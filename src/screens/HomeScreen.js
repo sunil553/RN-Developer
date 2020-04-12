@@ -1,13 +1,19 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Button, StyleSheet,TouchableOpacity } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen</Text>;
+const HomeScreen = (props) => {
+  // console.log(props);
+  return (
+    <Button 
+    onPress = {() => props.navigation.navigate('profile')} title = "HomeScreen"/>
+  )
 };
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30
+    fontSize: 30,
+    width:50,
+    height:100
   }
 });
 
