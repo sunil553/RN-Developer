@@ -3,17 +3,18 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from './src/screens/ProfileScreen';
 import TextScreen from './src/screens/TextScreen';
-// import SplashScreen from './src/screens/SplashScreen';
+import CounterScreen from './src/screens/CounterScreen';
 
 const navigator = createStackNavigator(
   {
     // Splash : SplashScreen,
     Home: HomeScreen,
     profile: ProfileScreen,
-    text : TextScreen
+    text : TextScreen,
+    counter : CounterScreen
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "counter",
     defaultNavigationOptions: {
       title: "App"
     }
