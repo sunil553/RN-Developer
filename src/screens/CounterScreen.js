@@ -4,12 +4,14 @@ import { View, StyleSheet, Button, Text } from "react-native"
 const CounterScreen = () => {
     const [counter, setcounter] = useState(0)
 const COUNTER_INCREMENT = 1
-    const counterLogic = (type ,counter, countervalue) => {
+    const counterLogic = (type ,counter) => {
+        console.log(counter)
         if(type === 'ADD') {
-                setcounter(counter+1) 
-            
+                setcounter(counter+COUNTER_INCREMENT)  
+                console.log(counter)           
         } else{
-                setcounter(counter-1)
+                setcounter(counter-COUNTER_INCREMENT)
+                console.log(counter)           
         }
        
         return counter
@@ -18,13 +20,17 @@ const COUNTER_INCREMENT = 1
     return (
         <View>
             <Text style={styles.textstyle}>{counter}</Text>
+            <View style={styles.viewstyle}>
+
             <Button title='INCREMENT' onPress={() => {
-                counterLogic("ADD",counter,COUNTER_INCREMENT)
+                counterLogic("ADD",counter)
                 // counter++
             }} />
             <Button title='DECREMENT' onPress={() => {
-                counterLogic("SUB",counter,COUNTER_INCREMENT)
+                counterLogic("SUB",counter)
             }} />
+            </View>
+           
         </View>
     )
 };
@@ -33,7 +39,17 @@ const COUNTER_INCREMENT = 1
 const styles = StyleSheet.create({
     textstyle: {
         fontSize: 20,
-        alignSelf: "center"
+        alignSelf: "center",
+        fontWeight:"bold"
+    },
+    buttonstyle: {
+        fontSize: 20,
+        alignSelf: "center",
+        margin:50
+    },viewstyle: { 
+        alignSelf: "center", 
+        padding:50,
+        fontWeight:"bold"
     }
 });
 

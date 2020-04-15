@@ -4,19 +4,24 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from './src/screens/ProfileScreen';
 import TextScreen from './src/screens/TextScreen';
 import CounterScreen from './src/screens/CounterScreen';
+import HomeMenu from './src/screens/HomeMenu';
+import HomeRestuarent from './src/screens/HomeRestuarent';
+
 
 const navigator = createStackNavigator(
   {
     // Splash : SplashScreen,
     Home: HomeScreen,
     profile: ProfileScreen,
-    text : TextScreen,
-    counter : CounterScreen
+    text: TextScreen,
+    counter: CounterScreen,
+    homemenu: HomeMenu,
+    homeresturant: HomeRestuarent,
   },
   {
-    initialRouteName: "counter",
+    initialRouteName: "homemenu",
     defaultNavigationOptions: {
-      title: "App"
+      title: "Resturants"
     }
   }
 );
